@@ -1,0 +1,487 @@
+/* ===========================
+   Memorial Site – Shared Styles
+   =========================== */
+
+/* Reset & Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --cream:      #f9f6f0;
+  --white:      #ffffff;
+  --gold:       #b8963e;
+  --gold-light: #d4b06a;
+  --charcoal:   #2c2c2c;
+  --mid-gray:   #555555;
+  --light-gray: #e8e3da;
+  --border:     #d4cfc6;
+
+  --font-serif: 'Georgia', 'Times New Roman', serif;
+  --font-sans:  'Helvetica Neue', Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--cream);
+  color: var(--charcoal);
+  font-family: var(--font-serif);
+  line-height: 1.75;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ===========================
+   Header & Navigation
+   =========================== */
+
+header {
+  background-color: var(--white);
+  border-bottom: 2px solid var(--gold);
+  padding: 0.5rem 1.5rem;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.header-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.site-title {
+  font-size: 1.15rem;
+  font-weight: normal;
+  color: var(--gold);
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+nav {
+  display: flex;
+  gap: 1.75rem;
+  flex-wrap: wrap;
+}
+
+nav a {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--mid-gray);
+  text-decoration: none;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: color 0.2s;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* ===========================
+   Main Content Wrapper
+   =========================== */
+
+main {
+  flex: 1;
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem;
+}
+
+/* ===========================
+   Footer
+   =========================== */
+
+footer {
+  background-color: var(--white);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.25rem 1.5rem;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--mid-gray);
+  letter-spacing: 0.03em;
+}
+
+/* ===========================
+   Hero Section (index.html)
+   =========================== */
+
+.hero {
+  text-align: center;
+  padding: 3.5rem 1rem 2.5rem;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2.5rem;
+}
+
+.hero-ornament {
+  font-size: 1.6rem;
+  color: var(--gold-light);
+  letter-spacing: 0.5rem;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+.hero h1 {
+  font-size: 2.8rem;
+  font-weight: normal;
+  letter-spacing: 0.04em;
+  color: var(--charcoal);
+  line-height: 1.2;
+  margin-bottom: 0.4rem;
+}
+
+.hero .dates {
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  color: var(--mid-gray);
+  letter-spacing: 0.1em;
+  margin-bottom: 1.5rem;
+}
+
+.hero .tagline {
+  font-style: italic;
+  font-size: 1.15rem;
+  color: var(--mid-gray);
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+/* ===========================
+   Info Cards (index.html)
+   =========================== */
+
+.info-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.card h2 {
+  font-size: 0.8rem;
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--gold);
+  margin-bottom: 0.75rem;
+}
+
+.card p,
+.card address {
+  font-style: normal;
+  font-size: 1rem;
+  color: var(--charcoal);
+  line-height: 1.7;
+}
+
+.card .note {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--mid-gray);
+  margin-top: 0.5rem;
+}
+
+/* ===========================
+   Message Section (index.html)
+   =========================== */
+
+.message {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2rem 2.5rem;
+  font-size: 1.05rem;
+  line-height: 1.85;
+  color: var(--mid-gray);
+  font-style: italic;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.message cite {
+  display: block;
+  margin-top: 1rem;
+  font-style: normal;
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+}
+
+/* ===========================
+   Page Nav Links (shared)
+   =========================== */
+
+.page-links {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 2rem;
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.65rem 1.5rem;
+  border: 1.5px solid var(--gold);
+  border-radius: 3px;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  text-decoration: none;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.btn:hover {
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+/* ===========================
+   Obituary Page
+   =========================== */
+
+.obit-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.obit-header h1 {
+  font-size: 2.2rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.3rem;
+}
+
+.obit-header .dates {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  color: var(--mid-gray);
+  letter-spacing: 0.08em;
+}
+
+/* Language Toggle */
+.lang-toggle {
+  display: flex;
+  justify-content: center;
+  gap: 0;
+  margin-bottom: 2.5rem;
+}
+
+.lang-toggle button {
+  padding: 0.5rem 1.6rem;
+  border: 1.5px solid var(--gold);
+  background: none;
+  color: var(--gold);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.lang-toggle button:first-child {
+  border-right: none;
+  border-radius: 3px 0 0 3px;
+}
+
+.lang-toggle button:last-child {
+  border-left: none;
+  border-radius: 0 3px 3px 0;
+}
+
+.lang-toggle button.active {
+  background-color: var(--gold);
+  color: var(--white);
+}
+
+.lang-toggle button:hover:not(.active) {
+  background-color: #f3ead8;
+}
+
+.obit-content {
+  display: none;
+}
+
+.obit-content.visible {
+  display: block;
+}
+
+.obit-content h2 {
+  font-size: 1.25rem;
+  font-weight: normal;
+  color: var(--gold);
+  margin: 2rem 0 0.75rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 1px solid var(--light-gray);
+}
+
+.obit-content p {
+  margin-bottom: 1.1rem;
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+
+.obit-content .survivors {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-left: 3px solid var(--gold);
+  border-radius: 2px;
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+}
+
+.obit-content .survivors ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.obit-content .survivors ul li {
+  padding: 0.3rem 0;
+  font-size: 1rem;
+}
+
+.obit-content .survivors ul li::before {
+  content: "✦ ";
+  color: var(--gold-light);
+  font-size: 0.7rem;
+}
+
+/* Chinese text specific */
+.obit-content[lang="zh"] p,
+.obit-content[lang="zh"] li {
+  font-family: "PingFang SC", "Microsoft YaHei", "STHeiti", sans-serif;
+  line-height: 2;
+  letter-spacing: 0.04em;
+}
+
+/* ===========================
+   Gallery Page
+   =========================== */
+
+.gallery-header {
+  text-align: center;
+  padding-bottom: 2rem;
+  margin-bottom: 2rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.gallery-header h1 {
+  font-size: 2.2rem;
+  font-weight: normal;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.5rem;
+}
+
+.gallery-header p {
+  color: var(--mid-gray);
+  font-size: 1rem;
+}
+
+/* Link-card that opens the Google Photos album */
+.gallery-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+  min-height: 320px;
+  background: var(--white);
+  border: 1.5px solid var(--border);
+  border-top: 3px solid var(--gold);
+  border-radius: 6px;
+  text-decoration: none;
+  color: var(--charcoal);
+  padding: 3rem 2rem;
+  transition: box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
+  cursor: pointer;
+  margin-bottom: 1rem;
+}
+
+.gallery-card:hover {
+  background-color: #fdf8ef;
+  border-color: var(--gold);
+  box-shadow: 0 4px 20px rgba(184, 150, 62, 0.15);
+}
+
+.gallery-card-icon {
+  color: var(--gold-light);
+  transition: color 0.2s;
+}
+
+.gallery-card:hover .gallery-card-icon {
+  color: var(--gold);
+}
+
+.gallery-card-label {
+  font-size: 1.25rem;
+  font-family: var(--font-serif);
+  color: var(--charcoal);
+  text-align: center;
+}
+
+.gallery-card-sub {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  text-transform: uppercase;
+}
+
+/* ===========================
+   Divider
+   =========================== */
+
+.divider {
+  text-align: center;
+  color: var(--gold-light);
+  letter-spacing: 0.6rem;
+  font-size: 0.9rem;
+  margin: 2rem 0;
+  user-select: none;
+}
+
+/* ===========================
+   Responsive
+   =========================== */
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .obit-header h1 { font-size: 1.75rem; }
+  .gallery-header h1 { font-size: 1.75rem; }
+  main { padding: 1.5rem 1rem; }
+  .message { padding: 1.25rem 1.25rem; }
+  .gallery-card { min-height: 240px; padding: 2rem 1rem; }
+}
