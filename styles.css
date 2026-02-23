@@ -320,13 +320,20 @@ footer {
   border-radius: 0 3px 3px 0;
 }
 
-.lang-toggle button.active {
-  background-color: var(--gold);
-  color: var(--white);
+.lang-toggle button#btn-en {
+  background-color: var(--white);
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
-.lang-toggle button:hover:not(.active) {
-  background-color: #f3ead8;
+.lang-toggle button#btn-zh {
+  background-color: var(--gold);
+  color: var(--white);
+  border-color: var(--gold);
+}
+
+.lang-toggle button:hover {
+  opacity: 0.85;
 }
 
 .obit-content {
@@ -484,4 +491,16 @@ footer {
   main { padding: 1.5rem 1rem; }
   .message { padding: 1.25rem 1.25rem; }
   .gallery-card { min-height: 240px; padding: 2rem 1rem; }
+}
+
+[id$="-en"], [id$="-zh"] {
+  display: none;
+}
+
+.lang-toggle button {
+  display: inline-block;
+}
+
+.visible {
+  display: inline;
 }

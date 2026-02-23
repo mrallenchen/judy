@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Photo Gallery &mdash; In Memory of Judy Chen</title>
+  <title>Photo Gallery &mdash; In Memory of Judy Tseng</title>
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
   <header>
     <div class="header-inner">
-      <a class="site-title" href="index.html">In Memory of Judy Chen</a>
+      <a class="site-title" href="index.html">In Memory of Judy Tseng &#8226; 紀念曾麗喜</a>
       <nav>
-        <a href="index.html">Home</a>
-        <a href="obituary.html">Obituary</a>
-        <a href="gallery.html" class="active">Gallery</a>
+        <a href="index.html">Home &#8226; 首頁</a>
+        <a href="obituary.html">Obituary &#8226; 訃告</a>
+        <a href="gallery.html">Gallery &#8226; 照片集</a>
       </nav>
     </div>
   </header>
@@ -22,9 +22,14 @@
   <main>
 
     <div class="gallery-header">
-      <h1>Photo Gallery</h1>
-      <p>A collection of cherished memories &mdash; a life beautifully lived.</p>
+      <h1>Photo Gallery &#8226; 照片集</h1>
+      <p>
+        A collection of cherished memories &mdash; a life beautifully lived.<br />
+        珍貴回憶的集錦 &mdash; 一段美麗的人生。
+      </p>
     </div>
+
+    <p style="text-align: center; font-size: 1.5rem; margin: 3rem 0;">Coming Soon &mdash; 敬請期待</p>
 
     <!--
       Replace the ALBUM_URL placeholder below with the sharing link from your
@@ -34,13 +39,12 @@
         1. Open your Google Photos album in a browser.
         2. Click the share icon (or the three-dot menu ⋮ → "Share album").
         3. Copy the link (looks like: https://photos.app.goo.gl/XXXXXXXXXXXXXXXXX).
-        4. Paste it as the value of the href AND data-album-url attributes below.
+        4. Paste it as the value of the href attribute below.
 
       Google Photos does not allow iframe embedding, so the album opens in a
       new tab — which is the intended behaviour.
     -->
-    <a
-      id="gallery-link"
+    <!-- <a
       class="gallery-card"
       href="https://photos.app.goo.gl/REPLACE_WITH_YOUR_ALBUM_ID"
       target="_blank"
@@ -56,22 +60,15 @@
           <polyline points="21 15 16 10 5 21"/>
         </svg>
       </div>
-      <p class="gallery-card-label">View Photo Album in Google Photos</p>
-      <p class="gallery-card-sub">Opens in a new tab &rarr;</p>
-    </a>
+      <p class="gallery-card-label">View Photo Album &#8226; 查看照片集</p>
+      <p class="gallery-card-sub">Opens in a new tab &#8226; 在新標籤頁中打開 &rarr;</p>
+    </a> -->
 
   </main>
 
   <footer>
-    <p>In Loving Memory of Judy Chen &bull; 1945 &ndash; 2026</p>
+    <p>In Loving Memory of Judy Tseng &#8226; 紀念曾麗喜 &#8226; 1945 &ndash; 2026</p>
   </footer>
-
-  <script>
-    /*
-     * Update the gallery link href at runtime if a data attribute is set.
-     * To point to a real album, simply update the href on #gallery-link.
-     */
-  </script>
 
 </body>
 </html>
