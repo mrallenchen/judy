@@ -416,55 +416,156 @@ footer {
   font-size: 1rem;
 }
 
-/* Link-card that opens the Google Photos album */
-.gallery-card {
+/* Photo Grid */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.photo-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+  cursor: pointer;
+  aspect-ratio: 1 / 1;
+  background: var(--light-gray);
+  border: 1px solid var(--border);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.photo-item:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(184, 150, 62, 0.2);
+}
+
+.photo-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Lightbox Modal */
+.lightbox {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.95);
+  z-index: 1000;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.lightbox.active {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1rem;
-  width: 100%;
-  min-height: 320px;
-  background: var(--white);
-  border: 1.5px solid var(--border);
-  border-top: 3px solid var(--gold);
-  border-radius: 6px;
-  text-decoration: none;
-  color: var(--charcoal);
-  padding: 3rem 2rem;
-  transition: box-shadow 0.2s, border-color 0.2s, background-color 0.2s;
+  opacity: 1;
+}
+
+.lightbox-close {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  background: none;
+  border: none;
+  color: var(--white);
+  font-size: 3rem;
+  line-height: 1;
   cursor: pointer;
-  margin-bottom: 1rem;
-}
-
-.gallery-card:hover {
-  background-color: #fdf8ef;
-  border-color: var(--gold);
-  box-shadow: 0 4px 20px rgba(184, 150, 62, 0.15);
-}
-
-.gallery-card-icon {
-  color: var(--gold-light);
+  z-index: 1002;
   transition: color 0.2s;
+  padding: 0.5rem;
 }
 
-.gallery-card:hover .gallery-card-icon {
-  color: var(--gold);
+.lightbox-close:hover {
+  color: var(--gold-light);
 }
 
-.gallery-card-label {
-  font-size: 1.25rem;
-  font-family: var(--font-serif);
-  color: var(--charcoal);
-  text-align: center;
+.lightbox-content {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90vw;
+  max-height: 80vh;
+  flex: 1;
 }
 
-.gallery-card-sub {
+#lightboxImage {
+  max-width: 100%;
+  max-height: 80vh;
+  object-fit: contain;
+  border-radius: 4px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.lightbox-nav {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: var(--white);
+  font-size: 3rem;
+  line-height: 1;
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  border-radius: 4px;
+  z-index: 1001;
+}
+
+.lightbox-nav:hover {
+  background: rgba(184, 150, 62, 0.3);
+  color: var(--gold-light);
+}
+
+.lightbox-prev {
+  left: 1rem;
+}
+
+.lightbox-next {
+  right: 1rem;
+}
+
+.lightbox-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  padding: 1.5rem;
+  color: var(--white);
   font-family: var(--font-sans);
-  font-size: 0.85rem;
-  letter-spacing: 0.06em;
-  color: var(--gold);
-  text-transform: uppercase;
+}
+
+.slideshow-btn {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white);
+  font-size: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s, color 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.slideshow-btn:hover {
+  background: rgba(184, 150, 62, 0.3);
+  color: var(--gold-light);
+}
+
+.lightbox-counter {
+  font-size: 1rem;
+  letter-spacing: 0.05em;
+  color: rgba(255, 255, 255, 0.8);
 }
 
 /* ===========================
@@ -490,7 +591,29 @@ footer {
   .gallery-header h1 { font-size: 1.75rem; }
   main { padding: 1.5rem 1rem; }
   .message { padding: 1.25rem 1.25rem; }
-  .gallery-card { min-height: 240px; padding: 2rem 1rem; }
+
+  .photo-grid {
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .lightbox-nav {
+    font-size: 2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .lightbox-prev { left: 0.5rem; }
+  .lightbox-next { right: 0.5rem; }
+
+  .lightbox-close {
+    font-size: 2.5rem;
+    right: 1rem;
+  }
+
+  .slideshow-btn {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
 }
 
 [id$="-en"], [id$="-zh"] {
