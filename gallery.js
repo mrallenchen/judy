@@ -1178,7 +1178,7 @@ const photos = [
 // GALLERY STATE
 let currentIndex = 0;
 let slideshowInterval = null;
-const SLIDESHOW_DELAY = 4000; // 4 seconds per photo
+const SLIDESHOW_DELAY = 2000; // 2 seconds per photo
 
 // DOM ELEMENTS
 const photoGrid = document.getElementById('photoGrid');
