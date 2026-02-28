@@ -964,11 +964,6 @@ const photos = [
     alt: 'Photo'
   },
   {
-    thumb: 'https://lh3.googleusercontent.com/pw/AP1GczPXThgs8tl-WveXX2QNaV8L5MsFUnYu3aSpLtStvcMXcc8fQvrRQq8GBEjh2hBwdBwK416gCICE5JKjrglW08ahY3CopHe8UQ3G9nS9ySC5bkVtqDFB=w400',
-    full: 'https://lh3.googleusercontent.com/pw/AP1GczPXThgs8tl-WveXX2QNaV8L5MsFUnYu3aSpLtStvcMXcc8fQvrRQq8GBEjh2hBwdBwK416gCICE5JKjrglW08ahY3CopHe8UQ3G9nS9ySC5bkVtqDFB=w2000',
-    alt: 'Photo'
-  },
-  {
     thumb: 'https://lh3.googleusercontent.com/pw/AP1GczPXtGVdYoVNGrePxEzuixeqNbpRYWo8ZJ8bYR6pfYn4RzGraobl1MjmdBHbPbluy3FTwrdnZDWW67oU2lHM-i1fUdx9xb3rf8-ZIXkocEsRSMbDgs4=w400',
     full: 'https://lh3.googleusercontent.com/pw/AP1GczPXtGVdYoVNGrePxEzuixeqNbpRYWo8ZJ8bYR6pfYn4RzGraobl1MjmdBHbPbluy3FTwrdnZDWW67oU2lHM-i1fUdx9xb3rf8-ZIXkocEsRSMbDgs4=w2000',
     alt: 'Photo'
